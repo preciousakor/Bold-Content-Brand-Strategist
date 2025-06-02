@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precious - Bold Content & Brand Strategist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            margin: 0 auto 30px;
+            background: linear-gradient(45deg, #ff9a56, #ffad56);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .journey-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 12px 24px;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        .section {
+            padding: 50px 40px;
+            border-bottom: 1px solid #f7fafc;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d3748;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .freebie-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .freebie-section .section-title {
+            color: white;
+            font-size: 2.2rem;
+        }
+
+        .freebie-section .section-title::after {
+            background: rgba(255,255,255,0.3);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .freebie-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .download-button {
+            display: inline-block;
+            background: white;
+            color: #f5576c;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: #4a5568;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .service-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .service-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .journey-section {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .journey-section .section-title {
+            color: white;
+        }
+
+        .journey-section .section-title::after {
+            background: rgba(255,255,255,0.3);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .journey-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .tiktok-button {
+            display: inline-block;
+            background: #ff0050;
+            color: white;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(255, 0, 80, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .tiktok-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 0, 80, 0.4);
+        }
+
+        .testimonials {
+            background: #f7fafc;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #667eea;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #4a5568;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .social-text {
+            font-weight: 600;
+            flex-grow: 1;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #2d3748;
+            color: white;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .coming-soon {
+            text-align: center;
+            font-style: italic;
+            color: #718096;
+            font-size: 1.1rem;
+            padding: 40px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 40px 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 1. Header / Hero Block -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="profile-image">
+                    👑
+                </div>
+                <h1>Hi, I'm Precious</h1>
+                <p class="hero-subtitle">Your Bold Content & Brand Strategist</p>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 15px;">
+                    Helping creators & solopreneurs build a personal brand that gets them seen, trusted, and paid.
+                </p>
+                <div class="journey-badge">
+                    🎯 Currently on a 90-day reinvention journey. Follow along!
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Freebie Section – Lead Magnet CTA -->
+        <div class="section freebie-section">
+            <h2 class="section-title">✨ Free Download</h2>
+            <h3 style="font-size: 1.6rem; margin-bottom: 20px; font-weight: 700;">
+                30 Days of Content Prompts to Help You Show Up Boldly
+            </h3>
+            <p class="freebie-description">
+                Struggling to know what to post? Grab my free content prompt kit to build consistency, confidence, and connection. 
+                Transform your content strategy with daily prompts designed to showcase your expertise and personality.
+            </p>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 12px; margin: 30px 0;">
+                <p style="margin-bottom: 15px; font-weight: 600;">🎁 What's inside:</p>
+                <p style="font-size: 0.95rem; opacity: 0.9;">
+                    • 30 ready-to-use content prompts<br>
+                    • Templates for different content types<br>
+                    • Engagement boosting strategies<br>
+                    • Personal branding tips
+                </p>
+            </div>
+            <button class="download-button" onclick="alert('Add your Google Drive or Canva download link here!')">
+                📥 Grab the Free Kit
+            </button>
+        </div>
+
+        <!-- 3. Work With Me / Services -->
+        <div class="section">
+            <h2 class="section-title">💼 Work With Me</h2>
+            <p style="font-size: 1.2rem; color: #4a5568; margin-bottom: 30px; text-align: center;">
+                🚀 Want to build your brand and content with me? Choose your starting point:
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🗣️</div>
+                    <h3 class="service-title">Brand & Content Clarity Call</h3>
+                    <p class="service-description">
+                        20-minute free strategy session to identify your unique brand voice and content direction. 
+                        Perfect for getting unstuck and finding your focus.
+                    </p>
+                    <button class="service-button" onclick="alert('Add your calendar booking link here!')">
+                        Book a Call
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3 class="service-title">DM Strategy Support</h3>
+                    <p class="service-description">
+                        Quick questions? Need immediate guidance? Reach out directly on Instagram or LinkedIn 
+                        for personalized support and quick wins.
+                    </p>
+                    <button class="service-button" onclick="alert('Add your Instagram or LinkedIn profile link!')">
+                        DM Me 'READY'
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">1:1 Brand Coaching</h3>
+                    <p class="service-description">
+                        Intensive coaching to transform your personal brand from confused to confident. 
+                        Limited spots available this month.
+                    </p>
+                    <div style="background: #fff5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                        <p style="color: #e53e3e; font-weight: 600; font-size: 0.9rem;">
+                            🔥 Only 3 spots left this month
+                        </p>
+                    </div>
+                    <button class="service-button" onclick="alert('Add your booking or contact link!')">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. My Journey (TikTok Link) -->
+        <div class="section journey-section">
+            <h2 class="section-title">🔄 Reinventing Myself: A 90-Day Journey</h2>
+            <p class="journey-description">
+                I'm documenting my pivot into the next level of my brand and income — watch how I rebuild, refocus, and rise. 
+                Join thousands following my real-time transformation and get inspired to start your own reinvention.
+            </p>
+            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; margin: 30px 0;">
+                <p style="margin-bottom: 15px; font-weight: 600;">📱 Follow my journey:</p>
+                <p style="font-size: 0.95rem; opacity: 0.9;">
+                    • Daily behind-the-scenes content<br>
+                    • Real challenges and breakthroughs<br>
+                    • Strategy sessions and mindset shifts<br>
+                    • Community of fellow reinventors
+                </p>
+            </div>
+            <button class="tiktok-button" onclick="alert('Add your TikTok profile or playlist link here!')">
+                🎵 Watch My Journey
+            </button>
+        </div>
+
+        <!-- 5. What People Say -->
+        <div class="section testimonials">
+            <h2 class="section-title">📣 What People Say</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Precious helped me gain the confidence and structure I needed to finally start selling my offer. 
+                        Her approach is refreshingly honest and actionable."
+                    </p>
+                    <p class="testimonial-author">— Sarah M., Online Coach</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Her content prompts gave me a whole new vibe online. I went from posting sporadically to 
+                        having a content calendar that actually converts!"
+                    </p>
+                    <p class="testimonial-author">— Marcus T., Entrepreneur</p>
+                </div>
+            </div>
+
+            <div class="coming-soon">
+                ✨ More testimonials coming soon... maybe yours? ✨
+            </div>
+        </div>
+
+        <!-- 6. Stay Connected -->
+        <div class="section" style="background: #f7fafc;">
+            <h2 class="section-title">👣 Stay Connected</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #4a5568; margin-bottom: 30px;">
+                Let's build something amazing together. Choose your favorite platform:
+            </p>
+            
+            <div class="social-links">
+                <a href="mailto:your.email@gmail.com" class="social-link">
+                    <span class="social-icon">💌</span>
+                    <span class="social-text">Email Me</span>
+                </a>
+                
+                <a href="#" class="social-link" onclick="alert('Add your Instagram handle')">
+                    <span class="social-icon">📲</span>
+                    <span class="social-text">Instagram</span>
+                </a>
+                
+                <a href="#" class="social-link" onclick="alert('Add your LinkedIn profile')">
+                    <span class="social-icon">💼</span>
+                    <span class="social-text">LinkedIn</span>
+                </a>
+                
+                <a href="#" class="social-link" onclick="alert('Add your TikTok handle')">
+                    <span class="social-icon">🎵</span>
+                    <span class="social-text">TikTok</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Precious - Bold Content & Brand Strategist | Built with intention 💜</p>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add button click tracking (you can replace with your analytics)
+        document.querySelectorAll('button, .download-button, .service-button, .tiktok-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                console.log('Button clicked:', this.textContent.trim());
+                // Add your tracking code here
+            });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precious - Bold Content & Brand Strategist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            margin: 0 auto 30px;
+            background: linear-gradient(45deg, #ff9a56, #ffad56);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .journey-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 12px 24px;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        .section {
+            padding: 50px 40px;
+            border-bottom: 1px solid #f7fafc;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d3748;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .freebie-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .freebie-section .section-title {
+            color: white;
+            font-size: 2.2rem;
+        }
+
+        .freebie-section .section-title::after {
+            background: rgba(255,255,255,0.3);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .freebie-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .download-button {
+            display: inline-block;
+            background: white;
+            color: #f5576c;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: #4a5568;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .service-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .service-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .journey-section {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .journey-section .section-title {
+            color: white;
+        }
+
+        .journey-section .section-title::after {
+            background: rgba(255,255,255,0.3);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .journey-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .tiktok-button {
+            display: inline-block;
+            background: #ff0050;
+            color: white;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(255, 0, 80, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .tiktok-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 0, 80, 0.4);
+        }
+
+        .testimonials {
+            background: #f7fafc;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #667eea;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #4a5568;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #667eea;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .social-text {
+            font-weight: 600;
+            flex-grow: 1;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #2d3748;
+            color: white;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .coming-soon {
+            text-align: center;
+            font-style: italic;
+            color: #718096;
+            font-size: 1.1rem;
+            padding: 40px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 40px 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 1. Header / Hero Block -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="profile-image">
+                    👑
+                </div>
+                <h1>Hi, I'm Precious</h1>
+                <p class="hero-subtitle">Your Bold Content & Brand Strategist</p>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.9); margin-bottom: 15px;">
+                    Helping creators & solopreneurs build a personal brand that gets them seen, trusted, and paid.
+                </p>
+                <div class="journey-badge">
+                    🎯 Currently on a 90-day reinvention journey. Follow along!
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Freebie Section – Lead Magnet CTA -->
+        <div class="section freebie-section">
+            <h2 class="section-title">✨ Free Download</h2>
+            <h3 style="font-size: 1.6rem; margin-bottom: 20px; font-weight: 700;">
+                30 Days of Content Prompts to Help You Show Up Boldly
+            </h3>
+            <p class="freebie-description">
+                Struggling to know what to post? Grab my free content prompt kit to build consistency, confidence, and connection. 
+                Transform your content strategy with daily prompts designed to showcase your expertise and personality.
+            </p>
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 12px; margin: 30px 0;">
+                <p style="margin-bottom: 15px; font-weight: 600;">🎁 What's inside:</p>
+                <p style="font-size: 0.95rem; opacity: 0.9;">
+                    • 30 ready-to-use content prompts<br>
+                    • Templates for different content types<br>
+                    • Engagement boosting strategies<br>
+                    • Personal branding tips
+                </p>
+            </div>
+            <button class="download-button" onclick="alert('Add your Google Drive or Canva download link here!')">
+                📥 Grab the Free Kit
+            </button>
+        </div>
+
+        <!-- 3. Work With Me / Services -->
+        <div class="section">
+            <h2 class="section-title">💼 Work With Me</h2>
+            <p style="font-size: 1.2rem; color: #4a5568; margin-bottom: 30px; text-align: center;">
+                🚀 Want to build your brand and content with me? Choose your starting point:
+            </p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🗣️</div>
+                    <h3 class="service-title">Brand & Content Clarity Call</h3>
+                    <p class="service-description">
+                        20-minute free strategy session to identify your unique brand voice and content direction. 
+                        Perfect for getting unstuck and finding your focus.
+                    </p>
+                    <button class="service-button" onclick="alert('Add your calendar booking link here!')">
+                        Book a Call
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💬</div>
+                    <h3 class="service-title">DM Strategy Support</h3>
+                    <p class="service-description">
+                        Quick questions? Need immediate guidance? Reach out directly on Instagram or LinkedIn 
+                        for personalized support and quick wins.
+                    </p>
+                    <button class="service-button" onclick="alert('Add your Instagram or LinkedIn profile link!')">
+                        DM Me 'READY'
+                    </button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">1:1 Brand Coaching</h3>
+                    <p class="service-description">
+                        Intensive coaching to transform your personal brand from confused to confident. 
+                        Limited spots available this month.
+                    </p>
+                    <div style="background: #fff5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                        <p style="color: #e53e3e; font-weight: 600; font-size: 0.9rem;">
+                            🔥 Only 3 spots left this month
+                        </p>
+                    </div>
+                    <button class="service-button" onclick="alert('Add your booking or contact link!')">
+                        Apply Now
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. My Journey (TikTok Link) -->
+        <div class="section journey-section">
+            <h2 class="section-title">🔄 Reinventing Myself: A 90-Day Journey</h2>
+            <p class="journey-description">
+                I'm documenting my pivot into the next level of my brand and income — watch how I rebuild, refocus, and rise. 
+                Join thousands following my real-time transformation and get inspired to start your own reinvention.
+            </p>
+            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 15px; margin: 30px 0;">
+                <p style="margin-bottom: 15px; font-weight: 600;">📱 Follow my journey:</p>
+                <p style="font-size: 0.95rem; opacity: 0.9;">
+                    • Daily behind-the-scenes content<br>
+                    • Real challenges and breakthroughs<br>
+                    • Strategy sessions and mindset shifts<br>
+                    • Community of fellow reinventors
+                </p>
+            </div>
+            <button class="tiktok-button" onclick="alert('Add your TikTok profile or playlist link here!')">
+                🎵 Watch My Journey
+            </button>
+        </div>
+
+        <!-- 5. What People Say -->
+        <div class="section testimonials">
+            <h2 class="section-title">📣 What People Say</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Precious helped me gain the confidence and structure I needed to finally start selling my offer. 
+                        Her approach is refreshingly honest and actionable."
+                    </p>
+                    <p class="testimonial-author">— Sarah M., Online Coach</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">
+                        "Her content prompts gave me a whole new vibe online. I went from posting sporadically to 
+                        having a content calendar that actually converts!"
+                    </p>
+                    <p class="testimonial-author">— Marcus T., Entrepreneur</p>
+                </div>
+            </div>
+
+            <div class="coming-soon">
+                ✨ More testimonials coming soon... maybe yours? ✨
+            </div>
+        </div>
+
+        <!-- 6. Stay Connected -->
+        <div class="section" style="background: #f7fafc;">
+            <h2 class="section-title">👣 Stay Connected</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #4a5568; margin-bottom: 30px;">
+                Let's build something amazing together. Choose your favorite platform:
+            </p>
+            
+            <div class="social-links">
+                <a href="mailto:your.email@gmail.com" class="social-link">
+                    <span class="social-icon">💌</span>
+                    <span class="social-text">Email Me</span>
+                </a>
+                
+                <a href="#" class="social-link" onclick="alert('Add your Instagram handle')">
+                    <span class="social-icon">📲</span>
+                    <span class="social-text">Instagram</span>
+                </a>
+                
+                <a href="#" class="social-link" onclick="alert('Add your LinkedIn profile')">
+                    <span class="social-icon">💼</span>
+                    <span class="social-text">LinkedIn</span>
+                </a>
+                
+                <a href="#" class="social-link" onclick="alert('Add your TikTok handle')">
+                    <span class="social-icon">🎵</span>
+                    <span class="social-text">TikTok</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Precious - Bold Content & Brand Strategist | Built with intention 💜</p>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add button click tracking (you can replace with your analytics)
+        document.querySelectorAll('button, .download-button, .service-button, .tiktok-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                console.log('Button clicked:', this.textContent.trim());
+                // Add your tracking code here
+            });
+        });
+    </script>
+</body>
+</html>
